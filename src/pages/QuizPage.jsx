@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setQuizScore } from "../redux/progressSlice";
 import periods from "../data/periods";
+import { PageContainer, Title, Button, OptionButton, BackLink } from "../components/StyledComponents";
 
 function QuizPage() {
   const { id } = useParams();
@@ -51,51 +52,51 @@ function QuizPage() {
 
   if (showResult) {
     return (
-      <div className="quiz-page">
-        <h2>Quiz terminé !</h2>
+      <PageContainer>
+        <Title>Quiz terminé !</Title>
         <p>Tu as obtenu {score} bonnes réponses sur {quiz.length}.</p>
         <Link to={`/lecon/${lesson.id}`}>Retour à la leçon</Link>
         <br />
         <Link to="/">Retour à l'accueil</Link>
-      </div>
+      </PageContainer>
     );
   }
 
   return (
-    <div className="quiz-page">
+    <PageContainer>
       <p>Question {currentQuestionIndex + 1} / {quiz.length}</p>
-      <h2>{currentQuestion.question}</h2>
+      <Title as="h2">{currentQuestion.question}</Title>
 
-      <div className="quiz-options">
+      <div>
         {currentQuestion.options.map((option) => {
-          let className = "quiz-option-btn";
+          let status = null;
 
           if (selectedAnswer) {
             if (option === currentQuestion.correctAnswer) {
-              className += " correct";
+              status = "correct";
             } else if (option === selectedAnswer) {
-              className += " incorrect";
+              status = "incorrect";
             }
           }
 
           return (
-            <button
+            <OptionButton
               key={option}
-              className={className}
+              status={status}
               onClick={() => handleAnswerClick(option)}
             >
               {option}
-            </button>
+            </OptionButton>
           );
         })}
       </div>
 
       {selectedAnswer && (
-        <button onClick={handleNextClick}>
+        <Button onClick={handleNextClick}>
           {currentQuestionIndex === quiz.length - 1 ? "Voir le résultat" : "Question suivante"}
-        </button>
+        </Button>
       )}
-    </div>
+    </PageContainer>
   );
 }
 

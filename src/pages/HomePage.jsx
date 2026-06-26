@@ -1,19 +1,18 @@
 import { Link } from "react-router-dom";
 import periods from "../data/periods";
+import { PageContainer, Title, Card, CardTitle } from "../components/StyledComponents";
 
 function HomePage() {
   return (
-    <div className="home-page">
-      <h1>Découvrir l'histoire de l'Algérie</h1>
-      <div className="periods-list">
-        {periods.map((period) => (
-          <Link key={period.id} to={`/periode/${period.id}`} className="period-link">
-            <h2>{period.title}</h2>
-            <p>{period.description}</p>
-          </Link>
-        ))}
-      </div>
-    </div>
+    <PageContainer>
+      <Title>Découvrir l'histoire de l'Algérie</Title>
+      {periods.map((period) => (
+        <Card as={Link} key={period.id} to={`/periode/${period.id}`}>
+          <CardTitle>{period.title}</CardTitle>
+          <p>{period.description}</p>
+        </Card>
+      ))}
+    </PageContainer>
   );
 }
 

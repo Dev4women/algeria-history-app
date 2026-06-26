@@ -2,6 +2,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { markLessonComplete } from "../redux/progressSlice";
 import periods from "../data/periods";
+import { PageContainer, Title, Button, BackLink } from "../components/StyledComponents";
 
 function LessonPage() {
   const { id } = useParams();
@@ -24,12 +25,12 @@ function LessonPage() {
   }
 
   return (
-    <div className="lesson-page">
-      <Link to="/">← Retour à l'accueil</Link>
-      <h1>{lesson.title}</h1>
+    <PageContainer>
+      <BackLink as={Link} to="/">← Retour à l'accueil</BackLink>
+      <Title>{lesson.title}</Title>
       <p>{lesson.content}</p>
-      <button onClick={handleQuizClick}>Faire le quiz</button>
-    </div>
+      <Button onClick={handleQuizClick}>Faire le quiz</Button>
+    </PageContainer>
   );
 }
 
