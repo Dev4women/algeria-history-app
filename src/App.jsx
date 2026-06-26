@@ -7,7 +7,7 @@ import QuizPage from "./pages/QuizPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/algeria-history-app">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/periode/:id" element={<PeriodPage />} />
