@@ -1,16 +1,36 @@
-# React + Vite
+# Découvrir l'histoire de l'Algérie
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Plateforme web pédagogique pour découvrir les grandes périodes de l'histoire algérienne, à travers des leçons et des quiz interactifs.
 
-Currently, two official plugins are available:
+## Fonctionnalités
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 4 périodes historiques : l'Algérie antique, l'Algérie médiévale et ottomane, la colonisation française, la guerre de libération
+- 2 leçons par période, avec contenu de cours détaillé
+- Quiz de 5 questions par leçon, avec feedback immédiat (bonne/mauvaise réponse en couleur)
+- Récapitulatif complet des réponses à la fin de chaque quiz
+- Célébration finale animée : confettis en forme de drapeau algérien et hymne national
+- Suivi de progression (leçons lues, scores aux quiz) via Redux
+- Design responsive (mobile et desktop)
 
-## React Compiler
+## Stack technique
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React + Vite**
+- **React Router** : navigation dynamique (`/periode/:id`, `/lecon/:id`, `/lecon/:id/quiz`)
+- **Redux Toolkit** : gestion de la progression utilisateur
+- **styled-components** : CSS-in-JS pour le style des composants
+- **canvas-confetti** : animation de célébration
 
-## Expanding the Oxlint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm install
+npm run dev
+```
+
+## Workflow Git
+
+Ce projet suit la méthodologie **GitHub Flow** : chaque fonctionnalité est développée dans une branche dédiée (`feature/...`), puis fusionnée dans `main` via une Pull Request.
+
+## Sources historiques
+
+Le contenu pédagogique s'appuie sur des faits historiques vérifiés, recoupés notamment avec des sources algériennes (El Moudjahid, Algérie Presse Service) pour les événements de la guerre de libération.
