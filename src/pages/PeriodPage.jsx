@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import periods from "../data/periods";
+import { PageContainer, Title, Card, CardTitle, BackLink } from "../components/StyledComponents";
 
 function PeriodPage() {
   const { id } = useParams();
@@ -10,17 +11,15 @@ function PeriodPage() {
   }
 
   return (
-    <div className="period-page">
-      <Link to="/">← Retour à l'accueil</Link>
-      <h1>{period.title}</h1>
-      <div className="lessons-list">
-        {period.lessons.map((lesson) => (
-          <Link key={lesson.id} to={`/lecon/${lesson.id}`} className="lesson-link">
-            <h3>{lesson.title}</h3>
-          </Link>
-        ))}
-      </div>
-    </div>
+    <PageContainer>
+      <BackLink as={Link} to="/">← Retour à l'accueil</BackLink>
+      <Title>{period.title}</Title>
+      {period.lessons.map((lesson) => (
+        <Card as={Link} key={lesson.id} to={`/lecon/${lesson.id}`}>
+          <CardTitle>{lesson.title}</CardTitle>
+        </Card>
+      ))}
+    </PageContainer>
   );
 }
 
