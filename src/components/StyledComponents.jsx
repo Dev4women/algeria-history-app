@@ -11,6 +11,7 @@ export const Title = styled.h1`
   color: #006233;
   text-align: center;
   margin-bottom: 30px;
+  line-height: 1.3;
 `;
 
 export const Card = styled.div`
@@ -32,6 +33,7 @@ export const Card = styled.div`
 export const CardTitle = styled.h2`
   color: #d21034;
   margin-bottom: 8px;
+  line-height: 1.4;
 `;
 
 export const BackLink = styled.a`
