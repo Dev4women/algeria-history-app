@@ -5,6 +5,10 @@ export const PageContainer = styled.div`
   margin: 0 auto;
   padding: 30px 20px;
   font-family: Arial, Helvetica, sans-serif;
+
+  @media (max-width: 600px) {
+    padding: 20px 15px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -12,6 +16,12 @@ export const Title = styled.h1`
   text-align: center;
   margin-bottom: 30px;
   line-height: 1.3;
+  font-size: 28px;
+
+  @media (max-width: 600px) {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const Card = styled.div`
@@ -28,12 +38,21 @@ export const Card = styled.div`
   &:hover {
     transform: translateY(-3px);
   }
+
+  @media (max-width: 600px) {
+    padding: 15px;
+  }
 `;
 
 export const CardTitle = styled.h2`
   color: #d21034;
   margin-bottom: 8px;
   line-height: 1.4;
+  font-size: 20px;
+
+  @media (max-width: 600px) {
+    font-size: 17px;
+  }
 `;
 
 export const BackLink = styled.a`
@@ -53,9 +72,16 @@ export const Button = styled.button`
   font-size: 16px;
   cursor: pointer;
   margin-top: 15px;
+  margin-right: 10px;
 
   &:hover {
     background-color: #004d28;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 `;
 
@@ -72,4 +98,9 @@ export const OptionButton = styled.button`
   font-size: 16px;
   text-align: left;
   cursor: pointer;
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
 `;
