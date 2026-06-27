@@ -73,7 +73,7 @@ function QuizPage() {
     setSelectedAnswer(option);
 
     if (option === currentQuestion.correctAnswer) {
-      setScore(score + 1);
+      setScore((prevScore) => prevScore + 1);
     }
   }
 
